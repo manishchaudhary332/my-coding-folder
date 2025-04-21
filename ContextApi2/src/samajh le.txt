@@ -1,0 +1,46 @@
+ 1 = pahle vite app  create kiya 
+ 2 = src me context name se folder banaya
+ 3 = context folder ke andr 2 file banayi (UserContext.js) && (UserContextProvider.jsx)
+ 4 = UserContext ke Andr (
+       import React from'react';
+       const UserContext = React.createContext();
+       export default UserContext;
+ )
+ 5 = UserContextProvider ke andr (
+        (i) ek state banayenge  user setuser
+       (ii) UserContext ko import kiya && useState ko import kiya
+       (iii) UserContextProvider ke perameter me {children} pass krenge
+       (iV) return ke andr UserContext.Provider ke andr {children} pass kr denge
+ )
+
+ 6 = src ke andr components folder banaya (Login) & (profile)
+ 7 = Login ke andr UserContext ke throuh data bhejenge(
+        import useState, UserContext, UserContext
+        2 state banayi
+         username setusername state empty
+         password setpassword state empty
+
+         3 inputs ={
+           username value={username} onchange={(e)=>setusername(e.target.value)} ,
+           password value={password} onchange={(e)=>setpassword(e.target.value)} ,
+           submit onclick={handleSubmit},
+          }
+
+ )
+ 
+ 8 = login ke andr ek handleSubmit function banaya uske andr 
+      e.preventDefault chalaya taki page reload na ho
+     
+ 9 =  const {setuser} = useContext(UserContext)
+        setuser import kr liya or handleSubmit ke andr setuser({username,password})
+
+    ************    ese ham data bhejte he context api se   ************
+
+
+10 = profile ke andr import kro useContext & UserContext
+      const {user} = useContext(UserContext) user ko nikal liya iske niche
+      if(!user) return <h1>Login..</h1>
+
+      fir return kr do {} me user.username
+
+    *************  ese ham context api se data access krte he *****************  
