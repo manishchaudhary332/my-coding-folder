@@ -10,7 +10,7 @@ const Card = ({ item, onRemove, idx }) => {
   const shortText = item.info.slice(0, 50);
 
   return (
-    <div className="w-[350px] h-auto rounded-2xl shadow-lg bg-white overflow-hidden flex flex-col">
+    <div className="w-[350px] h-[400px] rounded-2xl shadow-lg bg-white overflow-hidden flex flex-col">
       <div className="h-[200px] w-full bg-gray-100 flex items-center justify-center">
         {item.image ? (
           <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
